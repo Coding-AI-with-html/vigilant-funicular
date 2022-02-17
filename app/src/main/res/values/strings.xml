@@ -1,0 +1,26 @@
+<resources>
+
+
+    <string name="app_name">AndroidApp</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="profile">Profile</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="retailer_heading">Join\nTo Game</string>
+    <string name="retailer_tag_line">Start your journey in this game now!</string>
+    <string name="create_account">Create Account</string>
+    <string name="create_account_second">Create\nAccount</string>
+    <string name="how_we_play">How to play</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forget_password">Forgot Password</string>
+    <string name="enter_username">Enter Username</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_password_second">Confirm Password</string>
+    <string name="next_btn">Next</string>
+    <string name="choose_gender">Choose Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="enter_email">Enter Email</string>
+
+
+</resources>
