@@ -12,6 +12,7 @@ import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -23,6 +24,8 @@ import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class SignUp2ndClass extends AppCompatActivity {
 
+    private static final String TAG = "SignUp2ndClass";
+
 
     //Variables
     ImageView backBtn;
@@ -31,6 +34,7 @@ public class SignUp2ndClass extends AppCompatActivity {
 
     RadioGroup radioGroup;
     RadioButton selectedRadioButton;
+    ProgressBar signUpProgBar;
 
 
 
@@ -50,11 +54,7 @@ public class SignUp2ndClass extends AppCompatActivity {
         btnSignUp = findViewById(R.id.signup_button);
         login = findViewById(R.id.signup_login_button);
         titleText = findViewById(R.id.signup_title_text);
-
-        Intent intet = getIntent();
-        String username = intet.getStringExtra(SignUp.EXTRA_TEXT);
-        String email = intet.getStringExtra(SignUp.EXTRA_TEXT2);
-        String password = intet.getStringExtra(SignUp.EXTRA_TEXT3);
+        signUpProgBar = findViewById(R.id.progress_bar_signup);
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,9 +66,15 @@ public class SignUp2ndClass extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                Intent intet = getIntent();
+                final String username = intet.getStringExtra(SignUp.EXTRA_TEXT);
+                final String email = intet.getStringExtra(SignUp.EXTRA_TEXT2);
+                final String password = intet.getStringExtra(SignUp.EXTRA_TEXT3);
+
                 selectedRadioButton  = (RadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
                 String gender = selectedRadioButton.getText().toString();
-
+                signUpProgBar.setVisibility(View.VISIBLE);
                 Handler handler = new Handler(Looper.getMainLooper());
                 handler.post(new Runnable() {
                     @Override
@@ -77,22 +83,29 @@ public class SignUp2ndClass extends AppCompatActivity {
                         //Creating array for parameters
                         String[] field = new String[4];
                         field[0] = "username";
-                        field[1] = "email";
-                        field[2] = "password";
+                        field[1] = "password";
+                        field[2] = "email";
                         field[3] = "gender";
 
                         //Creating array for data
-                        String[] data = new String[2];
+                        String[] data = new String[4];
                         data[0] = username;
-                        data[1] = email;
-                        data[2] = password;
+                        data[1] = password;
+                        data[2] = email;
                         data[3] = gender;
-                        PutData putData = new PutData("https://projects.vishnusivadas.com/AdvancedHttpURLConnection/putDataTest.php", "POST", field, data);
+                        PutData putData = new PutData("http://192.168.122.1/LoginRegister/signup.php", "POST", field, data);
                         if (putData.startPut()) {
                             if (putData.onComplete()) {
+                                Log.d(TAG, "fieldas: " + field[0] + " DataString" + data[0]);
+                                signUpProgBar.setVisibility(View.GONE);
                                 String result = putData.getResult();
-                                //End ProgressBar (Set visibility to GONE)
-                                Log.i("PutData", result);
+                                if(result.equals("Sign Up Success")){
+                                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                                    startActivity(intent);
+                                    finish();
+                                } else {
+                                    Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
+                                }
                             }
                         }
                         //End Write and Read data with URL
