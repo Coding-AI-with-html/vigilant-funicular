@@ -16,7 +16,6 @@ import android.widget.TextView;
 
 import com.example.androidapp.R;
 import com.google.android.material.textfield.TextInputEditText;
-import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
 public class SignUp extends AppCompatActivity {
     public static final String EXTRA_TEXT = "com.example.androidapp.common.EXTRA_TEXT";
