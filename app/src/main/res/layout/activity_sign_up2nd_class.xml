@@ -51,7 +51,8 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="10dp"
+                android:id="@+id/radioGroup">
 
                 <RadioButton
                     android:id="@+id/radioButton2"
@@ -77,10 +78,10 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/signup_next_button"
+            android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/next_btn"
+            android:text="@string/sign_up"
             android:backgroundTint="@color/black"
             android:textColor="@color/white"
             android:fontFamily="@font/muli"
