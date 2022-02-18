@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.androidapp.R;
 import com.google.android.material.textfield.TextInputEditText;
@@ -64,29 +65,39 @@ public class SignUp extends AppCompatActivity {
         String usrnameReg = username.getText().toString();
         String emailReg = email.getText().toString();
         String passwordReg = password.getText().toString();
+        String confPswrd = confpswrd.getText().toString();
+        if(confPswrd.equals(passwordReg)) {
+            if(passwordReg.length() <=5){
+                Toast.makeText(SignUp.this, R.string.more_characters_password,Toast.LENGTH_SHORT).show();
+            } else {
 
-        Intent intnt = new Intent(getApplicationContext(), SignUp2ndClass.class);
+                Intent intnt = new Intent(getApplicationContext(), SignUp2ndClass.class);
 
-        intnt.putExtra(EXTRA_TEXT,usrnameReg);
-        intnt.putExtra(EXTRA_TEXT2,emailReg);
-        intnt.putExtra(EXTRA_TEXT3,passwordReg);
-        //adding transition animation
+                intnt.putExtra(EXTRA_TEXT, usrnameReg);
+                intnt.putExtra(EXTRA_TEXT2, emailReg);
+                intnt.putExtra(EXTRA_TEXT3, passwordReg);
+                //adding transition animation
 
-        Pair[] pairs = new Pair[4];
+                Pair[] pairs = new Pair[4];
 
-        pairs[0] = new Pair<View, String>(backBtn,"transition_back_arrow_btn");
-        pairs[1] = new Pair<View, String>(btnNext,"transition_next_btn");
-        pairs[2] = new Pair<View, String>(login,"transition_login_btn");
-        pairs[3] = new Pair<View, String>(titleText,"transition_title_text");
+                pairs[0] = new Pair<View, String>(backBtn, "transition_back_arrow_btn");
+                pairs[1] = new Pair<View, String>(btnNext, "transition_next_btn");
+                pairs[2] = new Pair<View, String>(login, "transition_login_btn");
+                pairs[3] = new Pair<View, String>(titleText, "transition_title_text");
 
-        ActivityOptions actvtOptions = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
-        startActivity(intnt, actvtOptions.toBundle());
+                ActivityOptions actvtOptions = ActivityOptions.makeSceneTransitionAnimation(SignUp.this, pairs);
+                startActivity(intnt, actvtOptions.toBundle());
+            }
+        } else {
+            Toast.makeText(SignUp.this, R.string.not_same_password, Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void callLoginFromSignUp(View view) {
         startActivity(new Intent(getApplicationContext(), Login.class));
         finish();
     }
+
 
 
 

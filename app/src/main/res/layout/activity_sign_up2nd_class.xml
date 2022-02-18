@@ -59,13 +59,13 @@
                 android:id="@+id/radioGroup">
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/maleBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/male" />
 
                 <RadioButton
-                    android:id="@+id/radioButton"
+                    android:id="@+id/femaleBut"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/female"/>
@@ -78,6 +78,46 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 />
+            <RelativeLayout
+                android:id="@+id/female_pick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/fwarrior_pick"
+                    android:src="@drawable/fwarrior"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:padding="3dp"
+                    android:layout_alignParentStart="true" />
+                <ImageView
+                    android:id="@+id/fwizard_pick"
+                    android:src="@drawable/fwizard"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/male_pick"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/warrior_pick"
+                    android:src="@drawable/warrior"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentStart="true" />
+
+                <ImageView
+                    android:id="@+id/wizard_pick"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/wizard" />
+            </RelativeLayout>
 
         </LinearLayout>
 

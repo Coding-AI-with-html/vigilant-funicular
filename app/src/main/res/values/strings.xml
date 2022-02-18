@@ -20,6 +20,9 @@
     <string name="choose_gender">Choose Gender</string>
     <string name="empty_fields">Fields cannot be empty!</string>
     <string name="login_success">Login Success</string>
+    <string name="user_already_exists">User with this email address or username already exists!</string>
+    <string name="not_same_password">Password should match!</string>
+    <string name="more_characters_password"> Password must contain more than 5 characters</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="enter_email">Enter Email</string>
