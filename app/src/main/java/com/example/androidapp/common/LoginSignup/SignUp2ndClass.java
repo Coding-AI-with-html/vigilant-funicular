@@ -41,7 +41,8 @@ public class SignUp2ndClass extends AppCompatActivity {
     ImageView fWarrior,fWizard,mWarrior,mWizard;
     RelativeLayout fPick,mPick;
     RadioButton fPickRadio,mPickRadio;
-    String genderr;
+
+    String genderr = null;
 
 
 
@@ -55,6 +56,7 @@ public class SignUp2ndClass extends AppCompatActivity {
 
 
     public void bindComponents() {
+
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         backBtn = findViewById(R.id.signup_back_button);
         btnSignUp = findViewById(R.id.signup_button);
@@ -82,9 +84,13 @@ public class SignUp2ndClass extends AppCompatActivity {
                     fPick.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
+
                             Drawable highlight = getResources().getDrawable( R.drawable.highlight);
                             fWarrior.setBackground(highlight);
 
+                            //identify the character
+                            genderr = getResources().getString(R.string.warrior);
+                            //Null other background
                             fWizard.setBackground(null);
                             mWarrior.setBackground(null);
                             mWizard.setBackground(null);
@@ -96,7 +102,9 @@ public class SignUp2ndClass extends AppCompatActivity {
 
                             Drawable highlight = getResources().getDrawable( R.drawable.highlight);
                             fWizard.setBackground(highlight);
-
+                            //identify the character
+                            genderr = getResources().getString(R.string.wizard);
+                            //Null other background
                             fWarrior.setBackground(null);
                             mWarrior.setBackground(null);
                             mWizard.setBackground(null);
@@ -120,7 +128,9 @@ public class SignUp2ndClass extends AppCompatActivity {
                         public void onClick(View v) {
                             Drawable highlight = getResources().getDrawable( R.drawable.highlight);
                             mWarrior.setBackground(highlight);
-
+                            //identify the character
+                            genderr = getResources().getString(R.string.warrior);
+                            //Null other background
                             fWizard.setBackground(null);
                             fWarrior.setBackground(null);
                             mWizard.setBackground(null);
@@ -132,7 +142,9 @@ public class SignUp2ndClass extends AppCompatActivity {
 
                             Drawable highlight = getResources().getDrawable( R.drawable.highlight);
                             mWizard.setBackground(highlight);
-
+                            //identify the character
+                            genderr = getResources().getString(R.string.wizard);
+                            //Null other background
                             fWarrior.setBackground(null);
                             mWarrior.setBackground(null);
                             fWizard.setBackground(null);
@@ -151,14 +163,15 @@ public class SignUp2ndClass extends AppCompatActivity {
         btnSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                selectedRadioButton  = (RadioButton)findViewById(radioGroup.getCheckedRadioButtonId());
-                genderr = selectedRadioButton.getText().toString();
                 SignUpUser(genderr);
             }
         });
     }
 
     private void SignUpUser(String gender){
+
+        Toast.makeText(getApplicationContext(), gender, Toast.LENGTH_SHORT).show();
+
         Intent intet = getIntent();
         final String username = intet.getStringExtra(SignUp.EXTRA_TEXT);
         final String email = intet.getStringExtra(SignUp.EXTRA_TEXT2);
@@ -211,6 +224,7 @@ public class SignUp2ndClass extends AppCompatActivity {
                 //End Write and Read data with URL
             }
         });
+
     }
 
 
