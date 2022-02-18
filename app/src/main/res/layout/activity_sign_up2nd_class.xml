@@ -99,7 +99,6 @@
             android:textColor="@color/white"
             android:fontFamily="@font/muli"
             android:layout_marginTop="20dp"
-            android:onClick="callFinishSignupScreen"
             android:elevation="5dp"
             android:transitionName="transition_next_btn"/>
 

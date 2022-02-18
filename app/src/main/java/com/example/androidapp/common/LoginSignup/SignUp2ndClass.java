@@ -100,9 +100,18 @@ public class SignUp2ndClass extends AppCompatActivity {
                                 signUpProgBar.setVisibility(View.GONE);
                                 String result = putData.getResult();
                                 if(result.equals("Sign Up Success")){
-                                    Intent intent = new Intent(getApplicationContext(), Login.class);
-                                    startActivity(intent);
-                                    finish();
+                                    Intent intnt = new Intent(getApplicationContext(), MainActivity.class);
+                                    //adding transition animation
+
+                                    Pair[] pairs = new Pair[4];
+
+                                    pairs[0] = new Pair<View, String>(backBtn,"transition_back_arrow_btn");
+                                    pairs[1] = new Pair<View, String>(btnSignUp,"transition_next_btn");
+                                    pairs[2] = new Pair<View, String>(login,"transition_login_btn");
+                                    pairs[3] = new Pair<View, String>(titleText,"transition_title_text");
+
+                                    ActivityOptions actvtOptions = ActivityOptions.makeSceneTransitionAnimation(SignUp2ndClass.this, pairs);
+                                    startActivity(intnt, actvtOptions.toBundle());
                                 } else {
                                     Toast.makeText(getApplicationContext(),result,Toast.LENGTH_SHORT).show();
                                 }

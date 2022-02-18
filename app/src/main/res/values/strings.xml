@@ -18,6 +18,8 @@
     <string name="enter_password_second">Confirm Password</string>
     <string name="next_btn">Next</string>
     <string name="choose_gender">Choose Gender</string>
+    <string name="empty_fields">Fields cannot be empty!</string>
+    <string name="login_success">Login Success</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="enter_email">Enter Email</string>

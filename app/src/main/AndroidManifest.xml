@@ -21,6 +21,9 @@
             android:name=".common.LoginSignup.Login"
             android:exported="false" />
         <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".common.LoginSignup.RetailerStartUpScreen"
             android:exported="true">
             <intent-filter>
