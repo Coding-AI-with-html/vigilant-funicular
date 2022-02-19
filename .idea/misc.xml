@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable/field_password_icon.xml" value="0.139" />
         <entry key="app/src/main/res/drawable/filed_username_icon.xml" value="0.139" />
         <entry key="app/src/main/res/drawable/gerenal_back_icon.xml" value="0.139" />
+        <entry key="app/src/main/res/drawable/highlight.xml" value="0.123" />
         <entry key="app/src/main/res/drawable/white_circle.xml" value="0.118" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1765625" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1765625" />
