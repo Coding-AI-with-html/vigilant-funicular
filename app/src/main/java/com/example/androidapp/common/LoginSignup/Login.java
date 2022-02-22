@@ -2,7 +2,9 @@ package com.example.androidapp.common.LoginSignup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -32,11 +34,22 @@ public class Login extends AppCompatActivity {
 
     TextInputEditText emailLogin,passwordLogin;
 
+    SharedPreferences sharedPrefs;
+    public static final String fileName = "login";
+    public static final String Email = "email";
+    public static final String Password = "password";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_retailer_login);
         bindComponents();
+        sharedPrefs = getSharedPreferences(fileName, Context.MODE_PRIVATE);
+        if(sharedPrefs.contains(Email)){
+            Intent intet = new Intent(Login.this, MainActivity.class);
+            startActivity(intet);
+            finish();
+        }
 
     }
 
@@ -57,6 +70,7 @@ public class Login extends AppCompatActivity {
                 finish();
             }
         });
+
         lognBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,8 +89,6 @@ public class Login extends AppCompatActivity {
                             String[] field = new String[2];
                             field[0] = "email";
                             field[1] = "password";
-
-
                             //Creating array for data
                             String[] data = new String[2];
                             data[0] = email;
@@ -88,6 +100,10 @@ public class Login extends AppCompatActivity {
                                     loginProgBar.setVisibility(View.GONE);
                                     String result = putData.getResult();
                                     if (result.equals("Login Success")) {
+                                        SharedPreferences.Editor editor = sharedPrefs.edit();
+                                        editor.putString(Email, email);
+                                        editor.putString(Password, password);
+                                        editor.commit();
                                         Intent intet = new Intent(Login.this, MainActivity.class);
                                         startActivity(intet);
                                         finish();
