@@ -1,4 +1,4 @@
-package com.example.androidapp;
+package com.example.androidapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,9 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.androidapp.R;
+
+public class MainOld extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

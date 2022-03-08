@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item android:title="@string/places">
+    <menu android:checkableBehavior="single">
+
+
+        <item
+            android:id="@+id/drawer_town"
+            android:title="@string/town" />
+
+        <item
+            android:id="@+id/drawer_hut"
+            android:title="@string/hut" />
+
+        <item
+            android:id="@+id/drawer_dump"
+            android:title="@string/dump" />
+
+        <item
+            android:id="@+id/drawer_arena"
+            android:title="@string/arena"/>
+
+        <item
+            android:id="@+id/drawer_forest"
+            android:title="@string/forest" />
+
+        <item
+            android:id="@+id/drawer_river"
+            android:title="@string/river"/>
+
+        <item
+            android:id="@+id/drawer_sea"
+            android:title="@string/sea" />
+
+
+    </menu>
+    </item>
+    <item android:title="@string/character">
+        <menu>
+            <item
+                android:id="@+id/drawer_equipment"
+                android:title="@string/equipment" />
+
+            <item
+                android:id="@+id/drawer_bag"
+                android:title="@string/bag" />
+            <item
+                android:id="@+id/drawer_pet"
+                android:title="@string/pet" />
+
+
+
+            <item
+                android:id="@+id/drawer_tasks"
+                android:title="@string/tasks" />
+
+            <item
+                android:id="@+id/drawer_quests"
+                android:title="@string/quests" />
+            <item
+                android:id="@+id/drawer_achievements"
+                android:title="@string/achievements" />
+
+
+
+        </menu>
+    </item>
+
+
+
+    <item android:title="@string/communications">
+        <menu>
+            <item
+                android:id="@+id/drawer_party"
+                android:title="@string/party" />
+
+            <item
+                android:id="@+id/drawer_guilds"
+                android:title="@string/guilds" />
+            <item
+                android:id="@+id/drawer_highscores"
+                android:title="@string/highscores" />
+            <item
+                android:id="@+id/drawer_awards"
+                android:title="@string/awards" />
+            <item
+                android:id="@+id/forum"
+                android:title="@string/forum" />
+
+
+
+        </menu>
+    </item>
+
+    <item android:title="@string/more">
+        <menu>
+            <item
+                android:id="@+id/store"
+                android:title="@string/store" />
+
+            <item
+                android:id="@+id/settings"
+                android:title="@string/settings" />
+            <item
+                android:id="@+id/support"
+                android:title="@string/support" />
+            <item
+                android:id="@+id/log_out"
+                android:title="@string/log_out" />
+
+
+
+        </menu>
+    </item>
+
+
+
+</menu>

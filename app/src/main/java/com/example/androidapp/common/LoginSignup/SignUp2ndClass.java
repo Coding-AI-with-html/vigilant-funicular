@@ -15,9 +15,8 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.androidapp.MainActivity;
+import com.example.androidapp.ui.MainOld;
 import com.example.androidapp.R;
 import com.vishnusivadas.advanced_httpurlconnection.PutData;
 
@@ -112,7 +111,7 @@ public class SignUp2ndClass extends AppCompatActivity {
 
     public void callFinishSignupScreen(View vIew){
 
-        Intent intnt = new Intent(getApplicationContext(), MainActivity.class);
+        Intent intnt = new Intent(getApplicationContext(), MainOld.class);
 
         //adding transition animation
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidapp">
 
     <application
@@ -18,8 +19,20 @@
         <activity
             android:name=".common.LoginSignup.Login"
             android:exported="false" />
+<!--        <activity-->
+<!--            android:name=".common.LoginSignup.RetailerStartUpScreen"-->
+<!--            android:exported="true">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
+
+
         <activity
-            android:name=".common.LoginSignup.RetailerStartUpScreen"
+            android:name=".ui.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,6 +40,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".ui.activities.LearnActivity"></activity>
+        <activity android:name=".ui.activities.ContactActivity" />
+        <activity android:name=".ui.activities.HelpActivity" />
+<!--        <activity android:name=".ui.activities.MainActivity"-->
+<!--            android:theme="@style/Theme.AppCompat.NoActionBar"/>-->
 
         <meta-data
             android:name="preloaded_fonts"
